@@ -1,0 +1,159 @@
+/* game board table */
+html{
+    padding: 0;
+    margin: 0;
+}
+body{
+     /* font-family: sans-serif; */
+    height: 100vh;
+    background: radial-gradient(circle, hsla(206, 91%, 66%, 1) 0%, hsla(190, 90%, 51%, 1) 100%);
+}
+
+ h1{
+    text-align: center;
+    display: block;
+    font-size: 6rem;
+    margin-top: 0;
+    margin-bottom: 5vh;
+    position: relative;
+    color: aliceblue;
+    font-weight: 600;
+    text-shadow: 5px 4px 4px #8ecae6;
+    top: 5px;
+    text-transform: uppercase;
+ }
+
+
+#board{
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5vh;
+    position: absolute;
+    top: 32vh;
+    left: 32vw;
+}
+
+#board td {
+  width: 65px;
+  height: 65px;
+  border: solid 3px #666;
+  position: relative;
+  border-radius: 50%;
+  animation: color-change 2s linear infinite;
+  margin:20px;
+  font-size:30px;
+	font-weight: bold;
+  border-bottom:solid 3px #0d1b2a;
+}
+
+.piece {
+  margin: 5px;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  animation-name: fall-animation;
+  animation-duration: 500ms; 
+  position: absolute;
+  top: 0;
+  right: 0.05px
+}
+
+
+#column-top td {
+  border: dashed 2px #0d1b2a;
+  border-radius: 50%;
+}
+
+#column-top td:hover {
+  background-color: #e0e1dd;
+}
+
+@keyframes fall-animation {
+    from {
+        transform: translateY(-500px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes color-change {
+  0%,100%{
+    border-color:#0d1b2a;
+  }
+
+  25%{
+    border-color:#1b263b;
+  }
+  
+  50%{
+    border-color:#415a77;
+  }
+  
+  75%{
+    border-color:#778da9;
+  }
+}
+
+ .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+ }
+
+
+ .form-group {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+ }
+
+ label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  font-size: 18px;
+  color: #444;
+  margin-right: 10px;
+ }
+
+input {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  font-size: 18px;
+  color: #444;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+
+button {
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+}
